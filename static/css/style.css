@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 .mt-custom {
     /*margin-top: 5rem;*/
 }
@@ -564,11 +565,12 @@ footer .footer-links-wrapper li:nth-child(n+2) {
     color: #fff;
     text-align: center;
     position: relative;
-    font-size: 17px;
+    font-size: 25px;
     overflow: hidden;
-    padding: 0.5em 0;
+    padding: 0.2em 0em;
     background-color: transparent;
-    margin-top: 6em;
+    margin-top: 5em;
+    font-family: 'Lobster', cursive;
 }
 
 .hovereffect h2:after {
@@ -621,7 +623,7 @@ footer .footer-links-wrapper li:nth-child(n+2) {
 
 p {
     margin-top: -4em;
-    color: rgb(209, 208, 208);
+    color: rgb(201, 166, 10);
     text-align: center;
     /*font-style: ;*/
 }
@@ -648,6 +650,7 @@ p {
 footer .copyrt-wrapper {
     text-transform: capitalize;
     margin-top: 1em;
+    color: white;
 }
 
 .modal-content {
@@ -665,4 +668,3 @@ footer .copyrt-wrapper {
     outline: 0;
     margin-top: 6em;
 }
-
