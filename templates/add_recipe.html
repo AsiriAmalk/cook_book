@@ -1,0 +1,52 @@
+<div class="modal fade" id="modal-create">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Create</h5>
+                <button class="close" type="button" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <form action="/save" method="POST">
+
+                    <div class="form-group">
+                        <label for="movieName" style="color: black">Name</label>
+                        <input type="text" class="form-control" placeholder="Enter Recipe Name" name="name"
+                               required/>
+                    </div>
+                    <div class="form-group">
+                        <label for="moviePicture" style="color: black">Picture</label>
+                        <input type="text" class="form-control" placeholder="Image URL" name="url"
+                               required/>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="note" style="color: black">Notes</label>
+                        <input type="text" class="form-control" id="note" placeholder="Description" name="description"
+                               required/>
+                    </div>
+
+                    <div class="form-group">
+
+                        <label class="my-1 mr-2" for="inlineFormCustomSelectPref" style="color: black">Cuisine
+                            Type</label>
+
+                        <select class="custom-select" name="cuisine" required>
+                            <option value="">Open this select menu</option>
+                            <option value="indian">Indian</option>
+                            <option value="thai">Thai</option>
+                            <option value="italian">Italian</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <div class="invalid-feedback">Example invalid custom select feedback</div>
+                    </div>
+
+
+                    <button type="submit" class="btn btn-primary">Create New Recipe</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

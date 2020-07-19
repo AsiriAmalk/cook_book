@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Cook book</title>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='/images/cooklogo.png' )}}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- font awesome 5 icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body class="main-bg-wrapper">
+
+    <!-- header -->
+
+    {% include "add_recipe.html" %}
+    <header class="header-wrapper">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12 col-md-12 header-con-wrapper">
+                    <div class="header-logo-wrapper">
+                        <a href="/">
+                            <img class="img-fluid" src="{{ url_for('static', filename='/images/cooklogo.png' )}}" alt="Header Logo">
+                        </a>
+                    </div>
+                    <div class="main-menu-wrapper">
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/find_recipe">Find Recipe</a></li>
+                            <li><a data-toggle="modal" data-target="#modal-create">Add a recipe</a></li>
+                        </ul>
+                    </div>
+                    <div id="mob-menu-btn" class="mob-menu-btn-wrapper">
+                        <div class="mob-menu-btn">
+                            <span></span>
+                            <span></span>
+                            <span class="menu-txt">Menu</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mob-main-menu-wrapper">
+            <div class="container">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/find_recipe">Find Recipe</a></li>
+                    <li><a class="li-c" data-toggle="modal" data-target="#modal-create">Add a recipe</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </header>
+
+
+
+    <div class="container mt-custom main-section-con-wrapper">
+
+        {% block content %} {% endblock %}
+    </div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4">
+                    <p class="copyrt-wrapper"><span class="copy-symb">&copy;</span> Cook book &amp; com. all rights reserved.
+                    </p>
+                </div>
+                <div class="col-lg-4 col-md-4 socialmed-icons-wrapper">
+                    <a href="www.fb.com"><i class="fab fa-facebook-f"></i></a>
+                    <a href="www.twitter.com"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <ul class="footer-links-wrapper">
+                        <li><a href="#">terms &amp; conditions</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>
