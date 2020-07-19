@@ -18,7 +18,7 @@ def index():
 @app.route('/save', methods=["GET", "POST"])
 def save():
     if request.method == "POST":
-        name = request.form['name']
+        name = request.form['name'].lower()
         cuisine = request.form['cuisine']
         description = request.form['description']
         url = request.form['url']
@@ -31,9 +31,28 @@ def save():
         return render_template('index.html')
 
 
-@app.route('/find_recipe')
+@app.route('/find_recipe', methods=["POST", "GET"])
 def find_recipe():
-    return render_template('find_recipe.html')
+    if request.method == "POST":
+        search = request.form["search_1"]
+        # cuisine_search = request.form["cuisine"]
+        # print(cuisine_search)
+        query = {"name": {"$regex": "^{}".format(search)}}
+        recipies = collection.find(query)
+        recipies_list = []
+        for x in recipies:
+            recipies_list.append(x)
+
+        # print(recipies_list)
+        return render_template('find_recipe.html', content=recipies_list)
+
+    recipies = collection.find()
+    recipies_list = []
+    for x in recipies:
+        recipies_list.append(x)
+
+    # print(recipies_list)
+    return render_template('find_recipe.html', content=recipies_list)
 
 
 if __name__ == '__main__':
